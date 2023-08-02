@@ -1,0 +1,29 @@
+.container {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.back {
+  margin-top: 40px;
+}
+.cartItem {
+  display: flex;
+  margin-top: 50px;
+  border: 1px solid white;
+  width: 350px;
+}
+.image {
+  width: 200px;
+  height: 200px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+.name {
+  margin: 0;
+}
+.back {
+  margin-bottom: 10px;
+}

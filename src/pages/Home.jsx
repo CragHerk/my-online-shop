@@ -16,6 +16,7 @@ const Home = () => {
         <div className={styles.products__container}>
           {exampleProducts.map((product) => (
             <ProductCard
+              key={product.id}
               id={product.id}
               name={product.name}
               photo={product.photo}

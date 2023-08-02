@@ -17,7 +17,7 @@ const Header = () => {
       <Box>
         <Link to={"/cart"}>
           <Button className={styles.cart} leftIcon={<IoCartOutline />}>
-            Koszyk
+            Cart
           </Button>
         </Link>
       </Box>
