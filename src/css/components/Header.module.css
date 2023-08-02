@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-bottom: 1px solid white;
+}
+.cart {
+  margin-left: 20px;
+}
