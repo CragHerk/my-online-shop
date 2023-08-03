@@ -5,6 +5,7 @@ import store from "./state/Store/store";
 import Home from "./pages/Home";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/product/:id" element={<ProductDetails />} />
 
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
 
           <Route component={() => <div>404 Not Found</div>} />
         </Routes>

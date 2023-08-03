@@ -37,7 +37,9 @@ const ProductDetails = () => {
             <Button className={styles.addtocart} onClick={handleAddToCart}>
               Add to Cart
             </Button>
-            <Button className={styles.buynow}>Buy now</Button>
+            <Link to={"/checkout"}>
+              <Button className={styles.buynow}>Buy now</Button>
+            </Link>
           </Box>
         </Box>
         <Link to={"/"}>

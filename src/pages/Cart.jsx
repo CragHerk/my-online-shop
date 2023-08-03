@@ -48,7 +48,9 @@ const Cart = () => {
                 >
                   Delete
                 </Button>
-                <Button className={styles.checkout}>Buy and Pay</Button>
+                <Link to={"/checkout"}>
+                  <Button className={styles.checkout}>Buy and Pay</Button>
+                </Link>
               </div>
             </Box>
           ))
@@ -61,7 +63,7 @@ const Cart = () => {
           <Link to={"/"}>
             <Button className={styles.back}>Back to home</Button>
           </Link>
-          <Link to={"/"}>
+          <Link to={"/checkout"}>
             <Button className={styles.back}>Proceed to Checkout</Button>
           </Link>
         </Box>
