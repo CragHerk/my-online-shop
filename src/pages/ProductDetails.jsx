@@ -5,19 +5,19 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import exampleProducts from "../db/exampleproducts";
 import styles from "../css/components/ProductDetails.module.css";
-import { useDispatch } from "react-redux"; // Importuj useDispatch
-import { addToCart } from "../state/Slices/cartSlice"; // Importuj akcję addToCart
+import { useDispatch } from "react-redux";
+import { addToCart } from "../state/Slices/cartSlice";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const dispatch = useDispatch(); // Inicjalizuj useDispatch
+  const dispatch = useDispatch();
 
   const product = exampleProducts.find(
     (product) => product.id === parseInt(id)
   );
 
   const handleAddToCart = () => {
-    dispatch(addToCart(product)); // Wywołaj akcję addToCart z dispatch
+    dispatch(addToCart(product));
   };
 
   return (
