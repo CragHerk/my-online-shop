@@ -10,3 +10,10 @@
 .cart {
   margin-left: 20px;
 }
+.bookImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid white;
+  margin-right: 4px;
+}

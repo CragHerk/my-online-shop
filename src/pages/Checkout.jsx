@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   Flex,
   Box,
@@ -7,49 +7,75 @@ import {
   Text,
   Button,
   VStack,
-  Center,
+  CloseButton,
 } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import styles from "../css/components/Checkout.module.css";
+import {
+  removeFromCart,
+  decreaseQuantity,
+  increaseQuantity,
+} from "../state/Slices/cartSlice";
 
 const Checkout = () => {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   const calculateTotal = () => {
-    return cart.reduce((total, product) => total + product.price, 0);
+    return cart.reduce(
+      (total, product) => total + product.price * product.quantity,
+      0
+    );
+  };
+
+  const handleRemoveOneFromCart = (productId) => {
+    dispatch(decreaseQuantity(productId));
+  };
+
+  const handleAddOneToCart = (productId) => {
+    dispatch(increaseQuantity(productId));
   };
 
   return (
     <>
       <Header />
-      <Flex
-        direction="column"
-        align="center"
-        p="4"
-        className={styles.checkout__container}
-      >
-        <Heading mb="4">Checkout</Heading>
+      <Flex className={styles.checkout__container}>
+        <Heading>Checkout</Heading>
         {cart.map((product) => (
           <Box key={product.id} className={styles.product__summary}>
-            <Text>{product.name}</Text>
+            <CloseButton
+              className={styles.remove__button}
+              onClick={() => dispatch(removeFromCart(product.id))}
+            />
+            <Text className={styles.name}>{product.name}</Text>
             <Text>${product.price.toFixed(2)}</Text>
+            <Box className={styles.quantity}>
+              <Text className={styles.x}> X {product.quantity}</Text>
+              <Button
+                className={styles.quantity__button}
+                onClick={() => handleRemoveOneFromCart(product.id)}
+              >
+                -
+              </Button>
+
+              <Button
+                className={styles.quantity__button}
+                onClick={() => handleAddOneToCart(product.id)}
+              >
+                +
+              </Button>
+            </Box>
           </Box>
         ))}
         <Box className={styles.total__container}>
-          <Text fontWeight="bold">Total:</Text>
+          <Text>Total:</Text>
           <Text>${calculateTotal().toFixed(2)}</Text>
         </Box>
-        <VStack
-          spacing="4"
-          align="flex-start"
-          className={styles.payment__methods}
-        >
-          <Text fontWeight="bold">Select Payment Method:</Text>
+        <VStack className={styles.payment__methods}>
+          <Text>Select Payment Method:</Text>
           {/* Tutaj dodaj wybór metody płatności */}
-          <Button colorScheme="blue" mt="4">
-            Proceed to Payment
-          </Button>
+          <Button>Proceed to Payment</Button>
         </VStack>
       </Flex>
       <Footer />
