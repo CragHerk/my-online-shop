@@ -2,6 +2,7 @@
   flex-direction: column;
   display: flex;
   align-items: center;
+  position: relative;
 }
 .back {
   margin-top: 40px;
@@ -9,7 +10,7 @@
 .cartItem {
   display: flex;
   margin-top: 50px;
-  border: 1px solid white;
+
   width: 350px;
 }
 .heading {
@@ -32,13 +33,16 @@
 }
 .back {
   margin-bottom: 10px;
+  background-color: transparent;
 }
 .delete {
   margin-bottom: 10px;
   width: 100px;
+  background-color: transparent;
 }
 .checkout {
   width: 100px;
+  background-color: transparent;
 }
 .buttons {
   margin-left: calc(50% - 161.5px);

@@ -3,13 +3,14 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  border: 1px solid white;
+
   width: 400px;
   height: 200px;
   border-width: 1px;
   border-radius: 0;
   margin-bottom: 1rem;
   margin-right: 4px;
+  position: relative;
 }
 
 .image {
@@ -28,8 +29,10 @@
 .details {
   margin-top: 4px;
   width: 150px;
+  background-color: transparent;
 }
 .addtocart {
+  background-color: transparent;
   width: 150px;
   height: 42px;
 }

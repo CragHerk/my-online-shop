@@ -7,6 +7,7 @@ import exampleProducts from "../db/exampleproducts";
 import styles from "../css/components/ProductDetails.module.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../state/Slices/cartSlice";
+import ParticlesComponent from "../components/Particles";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -21,36 +22,39 @@ const ProductDetails = () => {
   };
 
   return (
-    <>
-      <Header />
-      <Flex className={styles.card}>
-        <Box className={styles.box}>
-          <Image
-            src={product.photo}
-            alt={product.name}
-            className={styles.image}
-          />
-          <Box className={styles.infobox}>
-            <Heading className={styles.heading}>{product.name}</Heading>
-            <Text className={styles.price}>${product.price}</Text>
-            <Text className={styles.description}>{product.description}</Text>
-            <Button className={styles.addtocart} onClick={handleAddToCart}>
-              Add to Cart
-            </Button>
-            <Link to={"/checkout"}>
-              <Button className={styles.buynow} onClick={handleAddToCart}>
-                Buy now
+    <div>
+      <ParticlesComponent />
+      <div>
+        <Header />
+        <Flex className={styles.card}>
+          <Box className={styles.box}>
+            <Image
+              src={product.photo}
+              alt={product.name}
+              className={styles.image}
+            />
+            <Box className={styles.infobox}>
+              <Heading className={styles.heading}>{product.name}</Heading>
+              <Text className={styles.price}>${product.price}</Text>
+              <Text className={styles.description}>{product.description}</Text>
+              <Button className={styles.addtocart} onClick={handleAddToCart}>
+                Add to Cart
               </Button>
-            </Link>
+              <Link to={"/checkout"}>
+                <Button className={styles.buynow} onClick={handleAddToCart}>
+                  Buy now
+                </Button>
+              </Link>
+            </Box>
           </Box>
-        </Box>
-        <Link to={"/"}>
-          <Button className={styles.back}>Back to home</Button>
-        </Link>
-      </Flex>
+          <Link to={"/"}>
+            <Button className={styles.back}>Back to home</Button>
+          </Link>
+        </Flex>
 
-      <Footer />
-    </>
+        <Footer />
+      </div>
+    </div>
   );
 };
 

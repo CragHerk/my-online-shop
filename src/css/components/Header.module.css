@@ -6,9 +6,11 @@
   margin-left: 40px;
   margin-right: 40px;
   border-bottom: 1px solid white;
+  position: relative;
 }
 .cart {
   margin-left: 20px;
+  background-color: transparent;
 }
 .bookImage {
   width: 40px;

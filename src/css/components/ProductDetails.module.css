@@ -5,6 +5,7 @@
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
+  position: relative;
 }
 .box {
   width: 350px;
@@ -17,14 +18,17 @@
 .addtocart {
   width: 200px;
   margin-bottom: 10px;
+  background-color: transparent;
 }
 .buynow {
   margin-bottom: 10px;
   margin-left: 4px;
   width: 200px;
+  background-color: transparent;
 }
 .back {
   margin-top: 40px;
+  background-color: transparent;
 }
 @media screen and (min-width: 768px) {
   .box {
