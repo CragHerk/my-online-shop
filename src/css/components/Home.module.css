@@ -19,3 +19,8 @@
   justify-content: center;
   max-width: 1200px;
 }
+.login {
+  position: absolute;
+  top: -52px;
+  left: 75%;
+}

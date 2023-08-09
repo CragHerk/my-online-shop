@@ -1,5 +1,6 @@
 import React from "react";
-import { Flex, Box, Heading, Text, Center } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { Flex, Heading, Button } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
@@ -10,6 +11,9 @@ const Home = () => {
   return (
     <>
       <Header />
+      <Link to={"/login"}>
+        <Button className={styles.login}>Login</Button>
+      </Link>
       <Flex className={styles.home__flex}>
         <Heading className={styles.heading}>Welcome to My Online Store</Heading>
 
